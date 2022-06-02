@@ -1,3 +1,5 @@
+// ignore_for_file: unrelated_type_equality_checks
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_playground/data/data.dart';
@@ -25,7 +27,7 @@ class MessageProvider with ChangeNotifier {
     final List<Message> lastMessages = List.empty(growable: true);
 
     userIds.forEach((userId) {
-      final lastMessage = [...userMessages].lastWhere((message) =>
+      final lastMessage = userMessages.lastWhere((message) =>
           message.receiverId == userId || message.senderId == userId);
       lastMessages.add(lastMessage);
     });
