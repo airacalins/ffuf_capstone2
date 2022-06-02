@@ -19,9 +19,7 @@ class MessageList extends StatelessWidget {
       itemBuilder: ((context, index) {
         final user = usersData.getUserById(messages[index].receiverId);
         return ListTile(
-          leading: CircleAvatar(
-            backgroundImage: NetworkImage(user.imageUrl),
-          ),
+          leading: CircleAvatar(backgroundImage: NetworkImage(user.imageUrl)),
           title: Text('${user.firstName} ${user.lastName}'),
           subtitle: Text(messages[index].message),
           trailing: CircleAvatar(
@@ -30,9 +28,7 @@ class MessageList extends StatelessWidget {
             child: Text(
               '2',
               style: textTheme.caption!.merge(
-                const TextStyle(
-                  color: Colors.white,
-                ),
+                const TextStyle(color: Colors.white),
               ),
             ),
           ),

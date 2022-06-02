@@ -11,19 +11,11 @@ class SocialMediaLoginLoginGroup extends StatelessWidget {
       children: [
         const Padding(
           padding: EdgeInsets.all(8.0),
-          child: Image(
-            image: AssetImage(
-              'assets/images/app/google.png',
-            ),
-          ),
+          child: Image(image: AssetImage('assets/images/app/google.png')),
         ),
         const Padding(
           padding: EdgeInsets.all(8.0),
-          child: Image(
-            image: AssetImage(
-              'assets/images/app/facebook.png',
-            ),
-          ),
+          child: Image(image: AssetImage('assets/images/app/facebook.png')),
         ),
       ],
     );

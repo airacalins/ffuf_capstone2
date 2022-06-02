@@ -5,21 +5,19 @@ import 'package:flutter_playground/common/common.dart';
 import 'package:flutter_playground/screens/screens.dart';
 
 class AppScreen extends StatelessWidget {
-  AppScreen({Key? key}) : super(key: key);
+  const AppScreen({Key? key}) : super(key: key);
 
-  final tabs = [
+  final tabs = const [
     HomeScreen(),
-    const MessagesScreen(),
+    MessagesScreen(),
     ProfileScreen(),
-    const SettingsScreen(),
+    SettingsScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     final bottomNavData = Provider.of<BottomNav>(context);
 
-    return Scaffold(
-      body: tabs[bottomNavData.currentIndex],
-    );
+    return Scaffold(body: tabs[bottomNavData.currentIndex]);
   }
 }

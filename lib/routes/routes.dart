@@ -16,41 +16,25 @@ class RouteManager {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case splashScreen:
-        return MaterialPageRoute(
-          builder: (context) => const SplashScreen(),
-        );
+        return MaterialPageRoute(builder: (context) => const SplashScreen());
       case loginScreen:
-        return MaterialPageRoute(
-          builder: (context) => const LoginScreen(),
-        );
+        return MaterialPageRoute(builder: (context) => const LoginScreen());
       case registerScreen:
-        return MaterialPageRoute(
-          builder: (context) => const RegisterScreen(),
-        );
+        return MaterialPageRoute(builder: (context) => const RegisterScreen());
       case appScreen:
-        return MaterialPageRoute(
-          builder: (context) => AppScreen(),
-        );
+        return MaterialPageRoute(builder: (context) => const AppScreen());
       case homeScreen:
-        return MaterialPageRoute(
-          builder: (context) => HomeScreen(),
-        );
+        return MaterialPageRoute(builder: (context) => const HomeScreen());
       case editProfileScreen:
         return MaterialPageRoute(
-          builder: (context) => const EditProfileScreen(),
-        );
+            builder: (context) => const EditProfileScreen());
       case applicationScreen:
-        return MaterialPageRoute(
-          builder: (context) => ApplicationsScreen(),
-        );
+        return MaterialPageRoute(builder: (context) => ApplicationsScreen());
       case notificationScreen:
         return MaterialPageRoute(
-          builder: (context) => const NotificationScreen(),
-        );
+            builder: (context) => const NotificationScreen());
       case shareAppScreen:
-        return MaterialPageRoute(
-          builder: (context) => const ShareAppScreen(),
-        );
+        return MaterialPageRoute(builder: (context) => const ShareAppScreen());
 
       // TODO: Not Found Page Screen
       default:

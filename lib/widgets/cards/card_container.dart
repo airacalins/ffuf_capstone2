@@ -11,10 +11,9 @@ class CardContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
-        elevation: 0,
-        child: child);
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      elevation: 0,
+      child: child,
+    );
   }
 }

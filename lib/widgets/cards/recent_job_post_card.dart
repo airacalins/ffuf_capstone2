@@ -18,8 +18,10 @@ class RecentJobPostCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Company company = Provider.of<CompanyProvider>(context).getCompanyById(job.companyId);
-    final JobType jobType = Provider.of<JobTypeProvider>(context).getJobTypeById(job.jobTypeId);
+    final Company company =
+        Provider.of<CompanyProvider>(context).getCompanyById(job.companyId);
+    final JobType jobType =
+        Provider.of<JobTypeProvider>(context).getJobTypeById(job.jobTypeId);
     final textTheme = Theme.of(context).textTheme;
 
     return GestureDetector(
@@ -27,15 +29,12 @@ class RecentJobPostCard extends StatelessWidget {
       child: CardContainer(
         child: ListTile(
           leading: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15.0),
-            ),
+            decoration:
+                BoxDecoration(borderRadius: BorderRadius.circular(15.0)),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(15.0),
               child: Image(
-                image: NetworkImage(
-                  company.imageUrl,
-                ),
+                image: NetworkImage(company.imageUrl),
                 width: 50,
               ),
             ),

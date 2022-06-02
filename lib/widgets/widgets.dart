@@ -5,6 +5,8 @@ export 'package:flutter_playground/widgets/cards/application_card.dart';
 export 'package:flutter_playground/widgets/cards/card_container.dart';
 export 'package:flutter_playground/widgets/cards/popular_job_card.dart';
 export 'package:flutter_playground/widgets/cards/recent_job_post_card.dart';
+export 'package:flutter_playground/widgets/drawer_nav_bar/drawer_button.dart';
+export 'package:flutter_playground/widgets/drawer_nav_bar/drawer_item.dart';
 export 'package:flutter_playground/widgets/drawer_nav_bar/drawer_nav_bar.dart';
 export 'package:flutter_playground/widgets/fields/form_text_field.dart';
 export 'package:flutter_playground/widgets/fields/search_text_field.dart';

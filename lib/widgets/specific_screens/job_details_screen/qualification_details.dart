@@ -20,9 +20,7 @@ class QualificationDetails extends StatelessWidget {
           top: 70,
           bottom: 20,
         ),
-        padding: const EdgeInsets.symmetric(
-          horizontal: 10,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(40.0)),
         width: double.infinity,
         child: Column(
@@ -32,9 +30,7 @@ class QualificationDetails extends StatelessWidget {
               'Qualifications:',
               style: textTheme.headline4,
             ),
-            const SizedBox(
-              height: 5,
-            ),
+            const SizedBox(height: 5),
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
@@ -63,9 +59,7 @@ class QualificationDetails extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
             Row(
               children: [
                 Expanded(
@@ -76,9 +70,7 @@ class QualificationDetails extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
           ],
         ),
       ),

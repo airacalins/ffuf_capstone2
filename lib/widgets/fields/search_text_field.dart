@@ -23,9 +23,7 @@ class SearchTextField extends StatelessWidget {
             borderRadius: BorderRadius.circular(15.0),
             color: ColorTheme.primaryColor,
           ),
-          child: SvgPicture.asset(
-            'assets/icons/adjust-horizontal-alt.svg',
-          ),
+          child: SvgPicture.asset('assets/icons/adjust-horizontal-alt.svg'),
         ),
       ],
     );

@@ -1,5 +1,3 @@
-// ignore_for_file: must_be_immutable, use_key_in_widget_constructors
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -7,6 +5,8 @@ import '../../common/common.dart';
 import 'package:flutter_playground/providers/providers.dart';
 
 class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final user = Provider.of<UserProvider>(context).getLoginUser('1');

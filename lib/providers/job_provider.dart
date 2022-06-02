@@ -6,21 +6,17 @@ import 'package:flutter_playground/models/models.dart';
 class JobProvider with ChangeNotifier {
   final List<Job> _jobs = JobsData.jobs;
 
-  List<Job> get recentJobs {
+  List<Job> get getSortedJobsByDate {
     final jobs = [..._jobs];
     jobs.sort((a, b) => a.date.compareTo(b.date));
-    return jobs.toList();
+    return jobs;
   }
 
-  List<Job> get polularJobs {
+  List<Job> get getSortedJobsByPopularity {
     final jobs = [..._jobs];
     jobs.sort((a, b) => a.numberOfApplicant.compareTo(b.numberOfApplicant));
     return jobs.take(5).toList();
   }
 
-  int get jobsCount => _jobs.length;
-
-  Job getJobById(String id) {
-    return _jobs.firstWhere((job) => job.id == id);
-  }
+  Job getJobById(String id) => _jobs.firstWhere((job) => job.id == id);
 }

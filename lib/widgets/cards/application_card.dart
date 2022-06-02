@@ -99,9 +99,7 @@ class ApplicationCard extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 5.0,
-                      ),
+                      padding: const EdgeInsets.symmetric(vertical: 5.0),
                       child: Text(
                         '\$${job.salaryFrom.toStringAsFixed(0)} Monthly',
                         style: textTheme.bodyText1!.merge(

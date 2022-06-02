@@ -1,5 +1,3 @@
-// ignore_for_file: use_key_in_widget_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -7,6 +5,8 @@ import 'package:flutter_playground/routes/routes.dart';
 import 'package:flutter_playground/widgets/widgets.dart';
 
 class LoginForm extends StatelessWidget {
+  const LoginForm({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
@@ -19,9 +19,7 @@ class LoginForm extends StatelessWidget {
           prefixIcon: Container(
             width: 15,
             padding: const EdgeInsets.symmetric(horizontal: 12.0),
-            child: SvgPicture.asset(
-              'assets/icons/email.svg',
-            ),
+            child: SvgPicture.asset('assets/icons/email.svg'),
           ),
         ),
         FormTextField(
@@ -29,9 +27,7 @@ class LoginForm extends StatelessWidget {
           prefixIcon: Container(
             width: 15,
             padding: const EdgeInsets.symmetric(horizontal: 15.0),
-            child: SvgPicture.asset(
-              'assets/icons/lock.svg',
-            ),
+            child: SvgPicture.asset('assets/icons/lock.svg'),
           ),
           suffixIcon: const Icon(
             Icons.remove_red_eye_outlined,
@@ -44,13 +40,12 @@ class LoginForm extends StatelessWidget {
             const TextStyle(fontWeight: FontWeight.w500),
           ),
         ),
-        const SizedBox(
-          height: 40,
-        ),
+        const SizedBox(height: 40),
         SizedBox(
           width: double.infinity,
           child: ElevatedButton(
-            onPressed: () => Navigator.of(context).pushNamed(RouteManager.appScreen),
+            onPressed: () =>
+                Navigator.of(context).pushNamed(RouteManager.appScreen),
             child: const Text('LOG IN'),
           ),
         ),

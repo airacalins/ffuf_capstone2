@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../common/common.dart';
+import 'package:flutter_playground/common/common.dart';
 import 'package:flutter_playground/routes/routes.dart';
 import 'package:flutter_playground/widgets/widgets.dart';
 
@@ -18,9 +18,7 @@ class NotificationScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back_ios,
-          ),
+          icon: const Icon(Icons.arrow_back_ios),
           onPressed: () {
             Navigator.of(context).pushReplacementNamed(RouteManager.homeScreen);
             drawerNav.close();

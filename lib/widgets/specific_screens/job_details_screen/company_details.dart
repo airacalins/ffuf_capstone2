@@ -20,9 +20,7 @@ class CompanyDetails extends StatelessWidget {
           top: 70,
           bottom: 20,
         ),
-        padding: const EdgeInsets.symmetric(
-          horizontal: 10,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -31,17 +29,13 @@ class CompanyDetails extends StatelessWidget {
               style: textTheme.headline6,
             ),
             Text(company.companyDescription),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
             Text(
               'Address',
               style: textTheme.headline6,
             ),
             Text(company.address),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
             Text(
               'Website',
               style: textTheme.headline6,

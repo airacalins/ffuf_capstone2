@@ -16,9 +16,7 @@ class MessagesScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back_ios,
-          ),
+          icon: const Icon(Icons.arrow_back_ios),
           onPressed: () {
             Navigator.of(context).pushReplacementNamed(RouteManager.homeScreen);
             drawerNav.close();
@@ -30,7 +28,7 @@ class MessagesScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           ),
         ],
       ),

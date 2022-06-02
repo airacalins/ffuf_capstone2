@@ -37,14 +37,12 @@ class ApplicationsScreen extends StatelessWidget {
             padding: const EdgeInsets.all(20.0),
             child: Text(
               'Your Applications',
-              style: textTheme.headline3!.merge(const TextStyle(
-                fontWeight: FontWeight.w500,
-              )),
+              style: textTheme.headline3!.merge(
+                const TextStyle(fontWeight: FontWeight.w500),
+              ),
             ),
           ),
-          Expanded(
-            child: ApplicationList(applications: applications),
-          ),
+          Expanded(child: ApplicationList(applications: applications)),
         ],
       ),
     );

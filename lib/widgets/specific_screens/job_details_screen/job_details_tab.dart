@@ -50,11 +50,7 @@ class JobDetailsTab extends StatelessWidget {
           children: [
             QualificationDetails(job.qualifications),
             CompanyDetails(company),
-            const SingleChildScrollView(
-              child: Center(
-                child: Text('Reviews'),
-              ),
-            ),
+            const SingleChildScrollView(child: Center(child: Text('Reviews'))),
           ],
         ),
       ),

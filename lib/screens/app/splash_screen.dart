@@ -12,11 +12,7 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: const Image(
-          image: AssetImage(
-            'assets/images/app/logo.png',
-          ),
-        ),
+        leading: const Image(image: AssetImage('assets/images/app/logo.png')),
       ),
       body: Container(
         color: Colors.white,
@@ -26,15 +22,11 @@ class SplashScreen extends StatelessWidget {
             const Expanded(
               flex: 2,
               child: Image(
-                image: AssetImage(
-                  'assets/images/app/splash-screen-pic.png',
-                ),
+                image: AssetImage('assets/images/app/splash-screen-pic.png'),
                 fit: BoxFit.cover,
               ),
             ),
-            const SizedBox(
-              height: 60,
-            ),
+            const SizedBox(height: 60),
             Expanded(
               child: Column(
                 children: [
@@ -54,25 +46,20 @@ class SplashScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 75.0),
               child: ElevatedButton(
-                onPressed: () => Navigator.of(context).pushNamed(RouteManager.loginScreen),
+                onPressed: () =>
+                    Navigator.of(context).pushNamed(RouteManager.loginScreen),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Text(
-                      'Let\'s Get Started',
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
+                    const Text('Let\'s Get Started'),
+                    const SizedBox(width: 10),
                     SvgPicture.asset('assets/icons/arrow-right.svg'),
                   ],
                 ),
               ),
             ),
-            const SizedBox(
-              height: 70,
-            )
+            const SizedBox(height: 70),
           ],
         ),
       ),

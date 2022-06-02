@@ -7,7 +7,7 @@ class MessageProvider with ChangeNotifier {
   final List<Message> _messages = MessagesData.messages;
 
   List<Message> getMessageByUserId(String loginUserId) {
-    return [..._messages]
+    return _messages
         .where((message) =>
             message.receiverId == loginUserId ||
             message.senderId == loginUserId)
@@ -16,15 +16,14 @@ class MessageProvider with ChangeNotifier {
 
   List<Message> getLastMessagesPerUser(String loginUserId) {
     final userMessages = getMessageByUserId(loginUserId);
-    final senderIds = [...userMessages].map((i) => i.senderId);
-    final receiverIds = [...userMessages].map((i) => i.receiverId);
-    final userIds = [...senderIds, ...receiverIds]
+    final senderIds = userMessages.map((i) => i.senderId);
+    final receiverIds = userMessages.map((i) => i.receiverId);
+    final userIds = [senderIds, receiverIds]
         .where((i) => i != loginUserId)
         .toSet()
         .toList();
     final List<Message> lastMessages = List.empty(growable: true);
 
-    // ignore: avoid_function_literals_in_foreach_calls
     userIds.forEach((userId) {
       final lastMessage = [...userMessages].lastWhere((message) =>
           message.receiverId == userId || message.senderId == userId);

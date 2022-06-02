@@ -18,7 +18,8 @@ class PopularJobCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Company company = Provider.of<CompanyProvider>(context).getCompanyById(job.companyId);
+    final Company company =
+        Provider.of<CompanyProvider>(context).getCompanyById(job.companyId);
     final textTheme = Theme.of(context).textTheme;
 
     return GestureDetector(
@@ -42,12 +43,12 @@ class PopularJobCard extends StatelessWidget {
                           children: [
                             Container(
                               height: 30,
-                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.0)),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.0)),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(10.0),
                                 child: Image(
-                                  image: NetworkImage(company.imageUrl),
-                                ),
+                                    image: NetworkImage(company.imageUrl)),
                               ),
                             ),
                             Text(
@@ -66,9 +67,7 @@ class PopularJobCard extends StatelessWidget {
                         )
                       ],
                     ),
-                    const SizedBox(
-                      height: 15,
-                    ),
+                    const SizedBox(height: 15),
                     Text(
                       job.title,
                       style: textTheme.bodyLarge!.merge(
@@ -78,9 +77,7 @@ class PopularJobCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
+                    const SizedBox(height: 10),
                     RichText(
                       text: TextSpan(
                         children: [

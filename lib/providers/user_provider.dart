@@ -6,10 +6,10 @@ class UserProvider with ChangeNotifier {
   final List<User> _users = UsersData.users;
 
   User getLoginUser(String userId) {
-    return [..._users].firstWhere((user) => user.id == userId);
+    return _users.firstWhere((user) => user.id == userId);
   }
 
   User getUserById(String userId) {
-    return [..._users].firstWhere((user) => user.id == userId);
+    return _users.firstWhere((user) => user.id == userId);
   }
 }
