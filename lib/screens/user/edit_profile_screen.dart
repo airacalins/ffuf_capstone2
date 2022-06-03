@@ -21,7 +21,7 @@ class EditProfileScreen extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).pushReplacementNamed(RouteManager.homeScreen);
             drawerNav.close();
-            bottomNav.homeScreen();
+            bottomNav.currentIndex = 0;
           },
         ),
         centerTitle: true,

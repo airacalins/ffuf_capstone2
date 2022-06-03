@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_playground/themes/themes.dart';
 
-class NotificationSwitch extends StatelessWidget {
+class NotificationItemSwitch extends StatelessWidget {
   final String title;
   final String subtitle;
   final Function onSwitch;
 
-  const NotificationSwitch({
+  const NotificationItemSwitch({
     Key? key,
     required this.title,
     required this.subtitle,

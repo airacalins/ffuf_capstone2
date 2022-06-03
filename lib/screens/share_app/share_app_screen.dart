@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'package:flutter_playground/common/common.dart';
 import 'package:flutter_playground/routes/routes.dart';
+import 'package:flutter_playground/utils/strings_constant.dart';
 
 class ShareAppScreen extends StatelessWidget {
   const ShareAppScreen({Key? key}) : super(key: key);
@@ -21,14 +22,14 @@ class ShareAppScreen extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).pushReplacementNamed(RouteManager.homeScreen);
             drawerNav.close();
-            bottomNav.homeScreen();
+            bottomNav.currentIndex = 0;
           },
         ),
         centerTitle: true,
-        title: const Text('Share App'),
+        title: const Text(shareApp),
       ),
       body: const Center(
-        child: Text('Share App'),
+        child: Text(shareApp),
       ),
     );
   }

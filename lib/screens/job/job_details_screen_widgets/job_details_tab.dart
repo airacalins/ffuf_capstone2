@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/providers/providers.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter_playground/models/models.dart';
-import 'package:flutter_playground/widgets/widgets.dart';
+import 'package:flutter_playground/providers/providers.dart';
+import 'package:flutter_playground/screens/screen_widgets.dart';
+import 'package:flutter_playground/utils/strings_constant.dart';
 
 class JobDetailsTab extends StatelessWidget {
   final Job job;
@@ -14,15 +15,14 @@ class JobDetailsTab extends StatelessWidget {
   }) : super(key: key);
 
   final List<String> detailTabs = [
-    'Description',
-    'Company',
-    'Reviews',
+    description,
+    company,
+    reviews,
   ];
 
   @override
   Widget build(BuildContext context) {
-    final Company company =
-        Provider.of<CompanyProvider>(context).getCompanyById(job.companyId);
+    final Company company = Provider.of<CompanyProvider>(context).getCompanyById(job.companyId);
 
     return DefaultTabController(
       length: detailTabs.length,
@@ -48,9 +48,9 @@ class JobDetailsTab extends StatelessWidget {
         },
         body: TabBarView(
           children: [
-            QualificationDetails(job.qualifications),
-            CompanyDetails(company),
-            const SingleChildScrollView(child: Center(child: Text('Reviews'))),
+            JobDetailsTabQualificationDetails(job.qualifications),
+            JobDetailsTabCompanyDetails(company),
+            const SingleChildScrollView(child: Center(child: Text(reviews))),
           ],
         ),
       ),

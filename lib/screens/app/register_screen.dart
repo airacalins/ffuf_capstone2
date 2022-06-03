@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_playground/routes/routes.dart';
 import 'package:flutter_playground/screens/screen_widgets.dart';
+import 'package:flutter_playground/utils/strings_constant.dart';
 import 'package:flutter_playground/widgets/widgets.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -15,12 +17,20 @@ class RegisterScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              RegisterHeader(),
-              SizedBox(height: 20),
-              RegisterForm(),
-              SizedBox(height: 40),
-              RegisterSocialMediaLinks(),
+            children: [
+              const FormHeader(
+                title: welcomeBack,
+                description: loginFormInstruction,
+              ),
+              const SizedBox(height: 20),
+              const RegisterForm(),
+              const SizedBox(height: 40),
+              SocialMediaLinks(
+                caption1: orContinueWith,
+                caption2: alreadyHaveAnAccount,
+                linkText: login,
+                onNavigate: () => Navigator.of(context).pushNamed(RouteManager.loginScreen),
+              ),
             ],
           ),
         ),

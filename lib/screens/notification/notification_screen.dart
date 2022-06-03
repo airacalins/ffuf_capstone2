@@ -1,11 +1,10 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
+import 'package:flutter_playground/screens/screen_widgets.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter_playground/common/common.dart';
 import 'package:flutter_playground/routes/routes.dart';
-import 'package:flutter_playground/widgets/widgets.dart';
+import 'package:flutter_playground/utils/strings_constant.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({Key? key}) : super(key: key);
@@ -22,37 +21,37 @@ class NotificationScreen extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).pushReplacementNamed(RouteManager.homeScreen);
             drawerNav.close();
-            bottomNav.homeScreen();
+            bottomNav.currentIndex = 0;
           },
         ),
-        title: Text('Notifications'),
+        title: const Text(notifications),
         centerTitle: true,
       ),
       body: Column(
         children: [
-          NotificationSwitch(
-            title: 'New Post',
-            subtitle: 'If any new post update',
+          NotificationItemSwitch(
+            title: newPost,
+            subtitle: ifAnyNewPostUpdate,
             onSwitch: () {},
           ),
-          NotificationSwitch(
-            title: 'Got Hired',
-            subtitle: 'If you get hired in any company',
+          NotificationItemSwitch(
+            title: getHired,
+            subtitle: ifYouGetHiredInAnyCompany,
             onSwitch: () {},
           ),
-          NotificationSwitch(
-            title: 'Get Rejected',
-            subtitle: 'If you are rejected by any other company',
+          NotificationItemSwitch(
+            title: getRejected,
+            subtitle: ifYouAreRejectedByAnyOtherCompany,
             onSwitch: () {},
           ),
-          NotificationSwitch(
-            title: 'Message',
-            subtitle: 'Got any new message',
+          NotificationItemSwitch(
+            title: message,
+            subtitle: gotAnyNewMessage,
             onSwitch: () {},
           ),
-          NotificationSwitch(
-            title: 'Dark Mode',
-            subtitle: 'Enable Dark Theme',
+          NotificationItemSwitch(
+            title: darkMode,
+            subtitle: enableDarkTheme,
             onSwitch: () {},
           ),
         ],

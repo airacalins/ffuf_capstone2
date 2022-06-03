@@ -8,7 +8,7 @@ class CompanyProvider with ChangeNotifier {
 
   List<Company> get companies => _companies;
 
-  Company getCompanyById(String id) {
+  Company getCompanyById(int id) {
     return _companies.firstWhere((company) => company.id == id);
   }
 }

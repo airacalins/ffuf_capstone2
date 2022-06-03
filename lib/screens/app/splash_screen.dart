@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/routes/routes.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'package:flutter_playground/routes/routes.dart';
+import 'package:flutter_playground/utils/strings_constant.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -31,12 +33,12 @@ class SplashScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'Find a Perfect\nJob Match',
+                    findAPerfectJobMatch,
                     textAlign: TextAlign.center,
                     style: textTheme.headline1,
                   ),
                   Text(
-                    'Finding your dream job is more easier\nand faster with JobHub',
+                    splashScreenDescription,
                     style: textTheme.bodyText1,
                     textAlign: TextAlign.center,
                   ),
@@ -46,13 +48,12 @@ class SplashScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 75.0),
               child: ElevatedButton(
-                onPressed: () =>
-                    Navigator.of(context).pushNamed(RouteManager.loginScreen),
+                onPressed: () => Navigator.of(context).pushNamed(RouteManager.loginScreen),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Text('Let\'s Get Started'),
+                    const Text(letsGetStarted),
                     const SizedBox(width: 10),
                     SvgPicture.asset('assets/icons/arrow-right.svg'),
                   ],

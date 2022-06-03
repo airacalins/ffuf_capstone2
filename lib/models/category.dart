@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 class Category {
-  String id;
+  int id;
   String title;
 
   Category({

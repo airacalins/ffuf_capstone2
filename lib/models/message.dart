@@ -1,7 +1,7 @@
 class Message {
-  final String id;
-  final String senderId;
-  final String receiverId;
+  final int id;
+  final int senderId;
+  final int receiverId;
   final String message;
   final DateTime date;
 

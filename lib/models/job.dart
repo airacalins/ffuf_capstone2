@@ -1,16 +1,16 @@
 class Job {
-  final String id;
+  final int id;
   final String title;
-  final String companyId;
+  final int companyId;
   final double salaryFrom;
   final double salaryTo;
   final String location;
-  final String categoryId;
-  final String subCategoryId;
-  final String jobTypeId;
+  final int categoryId;
+  final int subCategoryId;
+  final int jobTypeId;
   final List<String> qualifications;
   final DateTime date;
-  int numberOfApplicant;
+  final int numberOfApplicant;
 
   Job({
     required this.id,

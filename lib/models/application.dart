@@ -9,7 +9,7 @@ enum ApplicationStatus {
 }
 
 class Application {
-  final String id;
+  final int id;
   final String jobId;
   final ApplicationStatus applicationStatus;
 

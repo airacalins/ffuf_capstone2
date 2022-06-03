@@ -13,9 +13,9 @@ class SearchTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Expanded(
-          child: FormTextField(hintText: 'Search here...'),
-        ),
+        // const Expanded(
+        //   child: FormTextField(hintText: 'Search here...'),
+        // ),
         Container(
           padding: const EdgeInsets.all(15),
           margin: const EdgeInsets.only(left: 10.0),

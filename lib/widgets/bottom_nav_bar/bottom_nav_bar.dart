@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter_playground/common/bottom_nav.dart';
+import 'package:flutter_playground/utils/strings_constant.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({
@@ -10,7 +11,7 @@ class BottomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bottomNavData = Provider.of<BottomNav>(context);
+    final bottomNav = Provider.of<BottomNav>(context);
 
     return ClipRRect(
       borderRadius: const BorderRadius.only(
@@ -19,24 +20,24 @@ class BottomNavBar extends StatelessWidget {
       ),
       child: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        currentIndex: bottomNavData.currentIndex,
-        onTap: (index) => bottomNavData.onTap(index),
+        currentIndex: bottomNav.currentIndex,
+        onTap: (index) => bottomNav.currentIndex = index,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: home,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.chat),
-            label: 'Messages',
+            label: messages,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'Profile',
+            label: profile,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label: 'Settings',
+            label: settings,
           ),
         ],
       ),

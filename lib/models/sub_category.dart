@@ -1,7 +1,7 @@
 class SubCategory {
-  String id;
+  int id;
   String title;
-  String categoryId;
+  int categoryId;
 
   SubCategory({
     required this.id,

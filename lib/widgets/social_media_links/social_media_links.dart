@@ -1,10 +1,21 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-import 'package:flutter_playground/routes/routes.dart';
 import 'package:flutter_playground/widgets/widgets.dart';
 
-class LoginSocialMediaLinks extends StatelessWidget {
-  const LoginSocialMediaLinks({Key? key}) : super(key: key);
+class SocialMediaLinks extends StatelessWidget {
+  final String caption1;
+  final String caption2;
+  final String linkText;
+  final Function onNavigate;
+
+  const SocialMediaLinks({
+    Key? key,
+    required this.caption1,
+    required this.caption2,
+    required this.linkText,
+    required this.onNavigate,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +25,7 @@ class LoginSocialMediaLinks extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
-          '- Or Continue with -',
+          '- $caption1 -',
           style: Theme.of(context).textTheme.bodyText1,
         ),
         const SizedBox(height: 20),
@@ -24,14 +35,13 @@ class LoginSocialMediaLinks extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'New User? ',
+              '$caption2 ',
               style: textTheme.bodyText1,
             ),
             GestureDetector(
-              onTap: () =>
-                  Navigator.of(context).pushNamed(RouteManager.registerScreen),
+              onTap: () => onNavigate(),
               child: Text(
-                'Create Account',
+                linkText,
                 style: textTheme.bodyText1!.merge(
                   const TextStyle(
                     fontWeight: FontWeight.w600,

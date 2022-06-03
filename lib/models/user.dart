@@ -1,8 +1,8 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 class User {
-  String id;
+  int id;
   String firstName;
   String lastName;
+  String username;
   String imageUrl;
   String email;
   String password;
@@ -11,6 +11,7 @@ class User {
     required this.id,
     required this.firstName,
     required this.lastName,
+    required this.username,
     required this.imageUrl,
     required this.email,
     required this.password,

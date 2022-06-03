@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_playground/models/models.dart';
 import 'package:flutter_playground/themes/themes.dart';
+import 'package:flutter_playground/utils/strings_constant.dart';
 import 'package:flutter_playground/widgets/widgets.dart';
 
 class ApplicationCard extends StatelessWidget {
@@ -10,13 +11,7 @@ class ApplicationCard extends StatelessWidget {
   final Job job;
   final Function onTap;
 
-  const ApplicationCard(
-      {Key? key,
-      required this.application,
-      required this.company,
-      required this.job,
-      required this.onTap})
-      : super(key: key);
+  const ApplicationCard({Key? key, required this.application, required this.company, required this.job, required this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +96,7 @@ class ApplicationCard extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 5.0),
                       child: Text(
-                        '\$${job.salaryFrom.toStringAsFixed(0)} Monthly',
+                        '\$${job.salaryFrom.toStringAsFixed(0)} ${monthly}',
                         style: textTheme.bodyText1!.merge(
                           const TextStyle(
                             fontWeight: FontWeight.w500,

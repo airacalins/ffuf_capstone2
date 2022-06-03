@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_playground/models/models.dart';
+import 'package:flutter_playground/utils/strings_constant.dart';
 
-class CompanyDetails extends StatelessWidget {
+class JobDetailsTabCompanyDetails extends StatelessWidget {
   final Company company;
 
-  const CompanyDetails(
+  const JobDetailsTabCompanyDetails(
     this.company, {
     Key? key,
   }) : super(key: key);
@@ -25,19 +26,19 @@ class CompanyDetails extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'About',
+              about,
               style: textTheme.headline6,
             ),
             Text(company.companyDescription),
             const SizedBox(height: 20),
             Text(
-              'Address',
+              address,
               style: textTheme.headline6,
             ),
             Text(company.address),
             const SizedBox(height: 20),
             Text(
-              'Website',
+              website,
               style: textTheme.headline6,
             ),
             Text(company.websiteUrl),

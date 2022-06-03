@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_playground/themes/themes.dart';
+import 'package:flutter_playground/utils/strings_constant.dart';
 
-class QualificationDetails extends StatelessWidget {
+class JobDetailsTabQualificationDetails extends StatelessWidget {
   final List<String> qualifications;
 
-  const QualificationDetails(
+  const JobDetailsTabQualificationDetails(
     this.qualifications, {
     Key? key,
   }) : super(key: key);
@@ -27,7 +28,7 @@ class QualificationDetails extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Qualifications:',
+              '${qualifications}:',
               style: textTheme.headline4,
             ),
             const SizedBox(height: 5),
@@ -65,7 +66,7 @@ class QualificationDetails extends StatelessWidget {
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {},
-                    child: const Text('Apply Now'),
+                    child: const Text(applyNow),
                   ),
                 ),
               ],

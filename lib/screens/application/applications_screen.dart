@@ -1,19 +1,20 @@
 // ignore_for_file: use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/providers/application_provider.dart';
 import 'package:provider/provider.dart';
 
-import 'package:flutter_playground/widgets/widgets.dart';
 import 'package:flutter_playground/common/common.dart';
+import 'package:flutter_playground/providers/application_provider.dart';
 import 'package:flutter_playground/routes/routes.dart';
+import 'package:flutter_playground/utils/strings_constant.dart';
+import 'package:flutter_playground/widgets/widgets.dart';
 
 class ApplicationsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final applications = Provider.of<ApplicationProvider>(context).applications;
     final drawerNav = Provider.of<DrawerNav>(context);
-    final bottomNavData = Provider.of<BottomNav>(context);
+    final bottomNav = Provider.of<BottomNav>(context);
 
     final textTheme = Theme.of(context).textTheme;
 
@@ -23,12 +24,12 @@ class ApplicationsScreen extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).pushReplacementNamed(RouteManager.homeScreen);
             drawerNav.close();
-            bottomNavData.homeScreen();
+            bottomNav.currentIndex = 0;
           },
           icon: const Icon(Icons.arrow_back_ios),
         ),
         centerTitle: true,
-        title: const Text('Applications'),
+        title: const Text(application),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,7 +37,7 @@ class ApplicationsScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(20.0),
             child: Text(
-              'Your Applications',
+              yourApplication,
               style: textTheme.headline3!.merge(
                 const TextStyle(fontWeight: FontWeight.w500),
               ),

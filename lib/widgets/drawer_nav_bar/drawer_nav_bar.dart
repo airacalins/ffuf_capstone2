@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'package:flutter_playground/providers/providers.dart';
 import 'package:flutter_playground/routes/routes.dart';
+import 'package:flutter_playground/utils/strings_constant.dart';
 import 'package:flutter_playground/widgets/widgets.dart';
 
 class DrawerNavBar extends StatelessWidget {
@@ -10,7 +11,7 @@ class DrawerNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<UserProvider>(context).getLoginUser('1');
+    final user = Provider.of<UserProvider>(context).getCurrentLoginUser;
     final textTheme = Theme.of(context).textTheme;
 
     return SafeArea(
@@ -32,7 +33,7 @@ class DrawerNavBar extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CircleAvatar(
-                        backgroundImage: NetworkImage(user.imageUrl),
+                        backgroundImage: NetworkImage(user!.imageUrl),
                         radius: 40.0,
                       ),
                       const SizedBox(height: 10),
@@ -49,30 +50,26 @@ class DrawerNavBar extends StatelessWidget {
                       DrawerItem(
                         bgColor: const Color(0xfffa5441),
                         icon: Icons.person,
-                        title: 'Edit Profile',
-                        onTap: () => Navigator.of(context).pushReplacementNamed(
-                            RouteManager.editProfileScreen),
+                        title: editProfile,
+                        onTap: () => Navigator.of(context).pushReplacementNamed(RouteManager.editProfileScreen),
                       ),
                       DrawerItem(
                         bgColor: const Color(0xfffb9087),
                         icon: Icons.watch_later,
-                        title: 'Applications',
-                        onTap: () => Navigator.of(context).pushReplacementNamed(
-                            RouteManager.applicationScreen),
+                        title: applications,
+                        onTap: () => Navigator.of(context).pushReplacementNamed(RouteManager.applicationScreen),
                       ),
                       DrawerItem(
                         bgColor: const Color(0xff2cb9b5),
                         icon: Icons.settings,
-                        title: 'Notification Settings',
-                        onTap: () => Navigator.of(context).pushReplacementNamed(
-                            RouteManager.notificationScreen),
+                        title: settings,
+                        onTap: () => Navigator.of(context).pushReplacementNamed(RouteManager.notificationScreen),
                       ),
                       DrawerItem(
                         bgColor: const Color(0xfff933c0),
                         icon: Icons.favorite,
-                        title: 'Share App',
-                        onTap: () => Navigator.of(context)
-                            .pushReplacementNamed(RouteManager.shareAppScreen),
+                        title: shareApp,
+                        onTap: () => Navigator.of(context).pushReplacementNamed(RouteManager.shareAppScreen),
                       ),
                     ],
                   ),
@@ -81,9 +78,8 @@ class DrawerNavBar extends StatelessWidget {
               DrawerItem(
                 bgColor: const Color(0xfff9454c),
                 icon: Icons.exit_to_app,
-                title: 'Logout',
-                onTap: () => Navigator.of(context)
-                    .pushReplacementNamed(RouteManager.loginScreen),
+                title: logout,
+                onTap: () => Navigator.of(context).pushReplacementNamed(RouteManager.loginScreen),
               )
             ],
           ),

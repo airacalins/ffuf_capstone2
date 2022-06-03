@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'package:flutter_playground/common/common.dart';
 import 'package:flutter_playground/routes/routes.dart';
+import 'package:flutter_playground/utils/strings_constant.dart';
 import 'package:flutter_playground/widgets/widgets.dart';
 
 class MessagesScreen extends StatelessWidget {
@@ -20,10 +21,10 @@ class MessagesScreen extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).pushReplacementNamed(RouteManager.homeScreen);
             drawerNav.close();
-            bottomNav.homeScreen();
+            bottomNav.currentIndex = 0;
           },
         ),
-        title: const Text('Messages'),
+        title: const Text(messages),
         centerTitle: true,
         actions: [
           IconButton(

@@ -1,5 +1,5 @@
 class JobType {
-  String id;
+  int id;
   String name;
 
   JobType({

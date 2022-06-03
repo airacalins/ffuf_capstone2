@@ -9,7 +9,7 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<UserProvider>(context).getLoginUser('1');
+    final user = Provider.of<UserProvider>(context).getCurrentLoginUser;
     final bottomNav = Provider.of<BottomNav>(context);
     final textTheme = Theme.of(context).textTheme;
 
@@ -19,7 +19,7 @@ class ProfileScreen extends StatelessWidget {
           icon: const Icon(
             Icons.arrow_back_ios,
           ),
-          onPressed: () => bottomNav.homeScreen(),
+          onPressed: () => bottomNav.currentIndex = 0,
         ),
         centerTitle: true,
         title: const Text(
@@ -39,7 +39,7 @@ class ProfileScreen extends StatelessWidget {
                       padding: const EdgeInsets.all(5.0),
                       child: CircleAvatar(
                         backgroundImage: NetworkImage(
-                          user.imageUrl,
+                          user!.imageUrl,
                         ),
                         radius: 40,
                       ),

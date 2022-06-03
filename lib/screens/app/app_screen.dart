@@ -16,8 +16,8 @@ class AppScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bottomNavData = Provider.of<BottomNav>(context);
+    final bottomNav = Provider.of<BottomNav>(context);
 
-    return Scaffold(body: tabs[bottomNavData.currentIndex]);
+    return Scaffold(body: tabs[bottomNav.currentIndex]);
   }
 }

@@ -13,13 +13,12 @@ class RecentJobPostList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final recentJobs = Provider.of<JobProvider>(context).getSortedJobsByDate;
+    final recentJobs = Provider.of<JobProvider>(context).sortedJobsByDate;
     final deviceHeight = MediaQuery.of(context).size.height;
 
     void handleShowJobDetails(Job job) {
       showModalBottomSheet(
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(40.0))),
+        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(40.0))),
         isScrollControlled: true,
         constraints: BoxConstraints(maxHeight: deviceHeight * 0.88),
         context: context,
