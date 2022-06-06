@@ -2,8 +2,7 @@ class Job {
   final int id;
   final String title;
   final int companyId;
-  final double salaryFrom;
-  final double salaryTo;
+  final double salary;
   final String location;
   final int categoryId;
   final int subCategoryId;
@@ -16,8 +15,7 @@ class Job {
     required this.id,
     required this.title,
     required this.companyId,
-    required this.salaryFrom,
-    required this.salaryTo,
+    required this.salary,
     required this.location,
     required this.categoryId,
     required this.subCategoryId,

@@ -82,7 +82,7 @@ class PopularJobCard extends StatelessWidget {
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: '\$${job.salaryFrom.toStringAsFixed(0)}/m  ',
+                            text: '\$${job.salary.toStringAsFixed(0)}/m  ',
                             style: textTheme.caption!.merge(
                               const TextStyle(
                                 fontWeight: FontWeight.bold,

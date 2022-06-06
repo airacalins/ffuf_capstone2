@@ -12,8 +12,10 @@ class JobDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Company company = Provider.of<CompanyProvider>(context).getCompanyById(job.companyId);
-    final JobType jobType = Provider.of<JobTypeProvider>(context).getJobTypeById(job.jobTypeId);
+    final Company company =
+        Provider.of<CompanyProvider>(context).getCompanyById(job.companyId);
+    final JobType jobType =
+        Provider.of<JobTypeProvider>(context).getJobTypeById(job.jobTypeId);
     final deviceWidth = MediaQuery.of(context).size.width;
 
     return Container(
@@ -43,7 +45,7 @@ class JobDetailsScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               JobDetailsJobType(jobType.name),
-              JobDetailsSalary(job.salaryFrom),
+              JobDetailsSalary(job.salary),
             ],
           ),
           const SizedBox(height: 20),

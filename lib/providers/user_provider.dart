@@ -6,8 +6,10 @@ class UserProvider with ChangeNotifier {
   final List<User> _users = UsersData.users;
   User? _currentLoginUser;
 
-  User getLoginUser(int userId) => _users.firstWhere((user) => user.id == userId);
-  User getUserById(int userId) => _users.firstWhere((user) => user.id == userId);
+  User getLoginUser(int userId) =>
+      _users.firstWhere((user) => user.id == userId);
+  User getUserById(int userId) =>
+      _users.firstWhere((user) => user.id == userId);
   User? get getCurrentLoginUser => _currentLoginUser;
 
   void registerUser(User user) {
@@ -31,12 +33,9 @@ class UserProvider with ChangeNotifier {
   }
 
   void loginUser(String email, String password) {
-    var user = _users.firstWhere((user) => user.email == email && user.password == password);
-    if (user == null) {
-      return;
-    } else {
-      _currentLoginUser = user;
-    }
+    var user = _users
+        .firstWhere((user) => user.email == email && user.password == password);
+    _currentLoginUser = user;
     notifyListeners();
   }
 

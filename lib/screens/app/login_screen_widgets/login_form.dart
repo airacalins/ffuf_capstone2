@@ -40,7 +40,7 @@ class _LoginFormState extends State<LoginForm> {
       }
       _form.currentState?.save();
       userData.loginUser(_user.email, _user.password);
-      Navigator.of(context).pushNamed(RouteManager.homeScreen);
+      Navigator.of(context).pushNamed(RouteManager.appScreen);
     }
 
     void _onEmailSaved(value) {
@@ -120,7 +120,8 @@ class _LoginFormState extends State<LoginForm> {
           ),
           Text(
             forgetPassword,
-            style: textTheme.caption!.merge(const TextStyle(fontWeight: FontWeight.w500)),
+            style: textTheme.caption!
+                .merge(const TextStyle(fontWeight: FontWeight.w500)),
           ),
           const SizedBox(height: 40),
           SizedBox(

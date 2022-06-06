@@ -53,7 +53,7 @@ class RecentJobPostCard extends StatelessWidget {
             style: textTheme.caption,
           ),
           trailing: Text(
-            '${job.salaryFrom.toStringAsFixed(0)}/m',
+            '${job.salary.toStringAsFixed(0)}/m',
             style: textTheme.caption,
           ),
         ),
